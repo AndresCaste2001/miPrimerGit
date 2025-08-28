@@ -1,0 +1,107 @@
+/* === Modern CSS Reset + Base Styles === */
+
+/* 1. Box-sizing: modelo de caja más predecible */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Reset de márgenes */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Altura completa de página */
+html, body {
+  height: 100%;
+}
+
+/* 4. Tipografía base */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Imágenes y medios responsivos */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Formularios heredan tipografía */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Quitar estilos de lista */
+ul, ol {
+  list-style: none;
+}
+
+/* 8. Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/*aqui comienza el estilo de grid*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 2fr 1fr 6fr 1fr; 
+    height:100vh;
+    gap: 1vh; 
+}
+.grid-item1{
+    grid-row: 1;
+    background-color: lightblue;
+    grid-column: 1/7;
+}
+.grid-item2{
+    grid-row: 2;
+    background-color: lightgreen;
+    grid-column: 1/7;
+}
+.grid-item3{
+    grid-row: 3;
+    grid-column: 1/3;
+    background-color: lightcoral;
+}
+.grid-item4{
+    grid-row: 3;
+    grid-column: 3/7;
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-item5{
+    grid-row: 4;
+    grid-column: 1/7;
+    background-color: lightpink;
+}
+/* 9. Manejo accesible de animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Variables globales === */
+:root {
+  --color-primary: #2563eb; /* Azul principal */
+  --color-secondary: #9333ea; /* Morado */
+  --color-accent: #f59e0b; /* Naranja */
+  --color-bg: #ffffff;
+  --color-text: #111827;
+}
